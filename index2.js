@@ -1,6 +1,6 @@
 //code alignment: Ctrl + Alt + I
 const mapboxToken = config.mapboxToken;
-mapboxgl.accessToken = mapboxToken;
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2hpaHdlbnd1dHdiZXRhIiwiYSI6ImNrZDdjMnVkbDIxN24ycmw1cnJuZmhubXgifQ.gebZuDMv9q_pYcd9gPfIrQ';
 
 //Functions
 let featureSetting = (sourceName, sourceLayer, stateID, stateObject) => {
