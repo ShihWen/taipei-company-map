@@ -1007,9 +1007,6 @@ map.on('load',function(){
 
             clickId = e.features[0].id;
             featureSetting('stations',source_layer1, clickId, {clickMain:true});
-            console.log(e.features[0]);
-            //console.log(typeof(e.features[0].properties.統一編));
-            //console.log(e.features[0].geometry.coordinates);
 
         }
     });
@@ -1031,9 +1028,6 @@ map.on('load',function(){
 
             clickId = e.features[0].id;
             featureSetting('stations2',source_layer2, clickId, {clickMain:true});
-            console.log(e.features[0]);
-            //console.log(typeof(e.features[0].properties.統一編));
-            //console.log(e.features[0].geometry.coordinates);
 
         }
     });
@@ -1055,10 +1049,6 @@ map.on('load',function(){
 
             clickId = e.features[0].id;
             featureSetting('stations3',source_layer3, clickId, {clickMain:true});
-            console.log(e.features[0]);
-            //console.log(typeof(e.features[0].properties.統一編));
-            //console.log(e.features[0].geometry.coordinates);
-
         }
     });
 
@@ -1079,9 +1069,6 @@ map.on('load',function(){
 
             clickId = e.features[0].id;
             featureSetting('stations4',source_layer4, clickId, {clickMain:true});
-            console.log(e.features[0]);
-            //console.log(typeof(e.features[0].properties.統一編));
-            //console.log(e.features[0].geometry.coordinates);
 
         }
     });
@@ -1103,9 +1090,6 @@ map.on('load',function(){
 
             clickId = e.features[0].id;
             featureSetting('stations5',source_layer5, clickId, {clickMain:true});
-            console.log(e.features[0]);
-            //console.log(typeof(e.features[0].properties.統一編));
-            //console.log(e.features[0].geometry.coordinates);
 
         }
     });
@@ -1127,9 +1111,6 @@ map.on('load',function(){
 
             clickId = e.features[0].id;
             featureSetting('stations6',source_layer6, clickId, {clickMain:true});
-            console.log(e.features[0]);
-            //console.log(typeof(e.features[0].properties.統一編));
-            //console.log(e.features[0].geometry.coordinates);
 
         }
     });
@@ -1174,7 +1155,6 @@ map.on('load',function(){
 
     $("#flyTo").on('click', function(){
 
-        console.log(flyLoc);
         flyLocGenerator(codeVal);
         if (flyLoc['geometry'].length != 0){
             map.flyTo({
@@ -1202,11 +1182,11 @@ map.on('load',function(){
             $('#established-date').html(flyLoc['startDate']);
             $('#industry-name').html(flyLoc['industryDesc']);
             $('#search-result').html('搜尋成功！');
-            console.log(flyLoc['source'],flyLoc['sourceLayer'], flyLoc['ftrId']);
+            //console.log(flyLoc['source'],flyLoc['sourceLayer'], flyLoc['ftrId']);
 
         } else {
             $('#search-result').html('不在範圍內..');
-            console.log('XX');
+            //console.log('XX');
         } 
     });
 
@@ -1351,7 +1331,7 @@ function openCity(evt, tabName) {
     evt.currentTarget.className += " active";
 
     currentTab = tabName;
-    console.log(tabName);
+    //console.log(tabName);
 
 }
 
@@ -1382,7 +1362,7 @@ $("#example").on("selected.bs.multiselect",function(e, option){
     let yearMin = parseInt(minSliderVal, 10);
     let yearMax = parseInt(maxSliderVal, 10);
     filterBy(yearMin, yearMax);
-    console.log(filtersCat);
+    //console.log(filtersCat);
     //featuresFromMoveend = map.queryRenderedFeatures({layers: ['station-access']});
     map.on('sourcedata', onSourceData);
 
