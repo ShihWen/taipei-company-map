@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Popup Multi Select jQuery Plugin Example</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.4.1/darkly/bootstrap.min.css">
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link
+      rel="stylesheet"
+      media="all"
+      href="../dist/stylesheets/popup-multiselect.min.css"
+    />
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="../dist/javascripts/popup-multiselect.min.js"></script>
+    <style>
+      .container { margin: 150px auto; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+          <h1>Popup Multi Select jQuery Plugin Example</h1>
+<div id="carbon-block" style="margin:50px auto"></div>
+<div  style="margin:50px auto"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+            <select multiple name="company[industries]" id="industries1">
+              <option value="AGRICULTURE" selected>AGRICULTURE</option>
+              <option value="GROCERY">GROCERY</option>
+              <option value="ACCOUNTING">ACCOUNTING</option>
+              <option value="HEALTH CARE">HEALTH CARE</option>
+              <option value="ADVERTISING">ADVERTISING</option>
+              <option value="INTERNET PUBLISHING">INTERNET PUBLISHING</option>
+              <option value="AEROSPACE">AEROSPACE</option>
+              <option value="INVESTMENT BANKING">INVESTMENT BANKING</option>
+              <option value="AIRCRAFT">AIRCRAFT</option>
+              <option value="LEGAL">LEGAL</option>
+              <option value="AIRLINE">AIRLINE</option>
+              <option value="MANUFACTURING">MANUFACTURING</option>
+              <option value="APPAREL & ACCESSORIES"
+                >APPAREL & ACCESSORIES</option
+              >
+              <option value="MOTION PICTURE & VIDEO"
+                >MOTION PICTURE & VIDEO</option
+              >
+              <option value="AUTOMOTIVE">AUTOMOTIVE</option>
+              <option value="MUSIC">MUSIC</option>
+              <option value="BANKING">BANKING</option>
+              <option value="NEWSPAPER PUBLISHERS">NEWSPAPER PUBLISHERS</option>
+              <option value="BROADCASTING">BROADCASTING</option>
+              <option value="ONLINE AUCTIONS">ONLINE AUCTIONS</option>
+              <option value="BROKERAGE">BROKERAGE</option>
+              <option value="PENSION FUNDS">PENSION FUNDS</option>
+              <option value="BIOTECHNOLOGY">BIOTECHNOLOGY</option>
+              <option value="PHARMACEUTICALS">PHARMACEUTICALS</option>
+              <option value="CALL CENTERS">CALL CENTERS</option>
+              <option value="PRIVATE EQUITY">PRIVATE EQUITY</option>
+              <option value="CARGO HANDLING">CARGO HANDLING</option>
+              <option value="PUBLISHING">PUBLISHING</option>
+              <option value="CHEMICAL">CHEMICAL</option>
+              <option value="REAL ESTATE">REAL ESTATE</option>
+              <option value="COMPUTER">COMPUTER</option>
+              <option value="RETAIL & WHOLESALE">RETAIL & WHOLESALE</option>
+              <option value="CONSULTING">CONSULTING</option>
+              <option value="SECURITIES & COMMODITY EXCHANGES"
+                >SECURITIES & COMMODITY EXCHANGES</option
+              >
+              <option value="CONSUMER PRODUCTS">CONSUMER PRODUCTS</option>
+              <option value="SERVICE">SERVICE</option>
+              <option value="COSMETICS">COSMETICS</option>
+              <option value="SOAP & DETERGENT">SOAP & DETERGENT</option>
+              <option value="DEFENSE">DEFENSE</option>
+              <option value="SOFTWARE">SOFTWARE</option>
+              <option value="DEPARTMENT STORES">DEPARTMENT STORES</option>
+              <option value="SPORTS">SPORTS</option>
+              <option value="EDUCATION">EDUCATION</option>
+              <option value="TECHNOLOGY">TECHNOLOGY</option>
+              <option value="ELECTRONICS">ELECTRONICS</option>
+              <option value="TELECOMMUNICATIONS">TELECOMMUNICATIONS</option>
+              <option value="ENERGY">ENERGY</option>
+              <option value="TELEVISION">TELEVISION</option>
+              <option value="ENTERTAINMENT & LEISURE"
+                >ENTERTAINMENT & LEISURE</option
+              >
+              <option value="TRANSPORTATION">TRANSPORTATION</option>
+              <option value="EXECUTIVE SEARCH">EXECUTIVE SEARCH</option>
+              <option value="TRUCKING">TRUCKING</option>
+              <option value="FINANCIAL SERVICES">FINANCIAL SERVICES</option>
+              <option value="VENTURE CAPITAL">VENTURE CAPITAL</option>
+              <option value="FOOD, BEVERAGE & TOBACCO" selected
+                >FOOD, BEVERAGE & TOBACCO</option
+              >
+            </select>
+
+    </div>
+    <script>
+  $(document).ready(function() {
+    $("#industries1").multiselect({
+      title: "Select Industry",
+      maxSelectionAllowed: 5,
+      modalSize: "md"
+    });
+    $("#industries1").on("shown.bs.multiselect", function(event) {
+    console.log(event);
+  });
+
+  });
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script>
+try {
+  fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function(response) {
+    return true;
+  }).catch(function(e) {
+    var carbonScript = document.createElement("script");
+    carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
+    carbonScript.id = "_carbonads_js";
+    document.getElementById("carbon-block").appendChild(carbonScript);
+  });
+} catch (error) {
+  console.log(error);
+}
+</script>
+  </body>
+</html>
+

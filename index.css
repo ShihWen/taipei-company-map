@@ -1,0 +1,162 @@
+body {
+    margin:0;
+    padding:0;
+}
+
+@media only screen and (min-width: 426px){
+    #map {
+        position:absolute;
+        top:0;
+        bottom:0;
+        width:calc(100% - 350px);
+        left:350px;
+    }
+
+    #side-bar {
+        /*display: flex;*/
+        flex-direction: column;
+        position:absolute;
+        width: 350px;
+        height: 100%;
+        box-shadow: 3px 3px 3px 3px #888888;
+    }
+
+    .upper-side-bar {
+        padding: 10px;
+        background-color: whitesmoke;
+        height: 100%;
+
+        /*flex-grow: 1;*/
+    }
+
+    .lower-side-bar {
+        background-color: skyblue;
+        /*flex-grow: 1;*/
+    }
+    
+    .pieChart {
+        background-color: white;
+        position: absolute;
+        bottom: 2%;
+        
+        /*width: 50%;
+        height: 50%;*/
+    }
+    
+    
+
+
+}
+
+@media only screen and (max-width: 425px){
+    #map {
+        position:absolute;
+        top:0;
+        bottom:0;
+        width:100%;
+        height: 66%;
+        left:0;
+
+    }
+
+
+}
+
+.clicked-comp-info {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    font-family: sans-serif;
+    margin-top: 5px;
+    margin-left: 5px;
+    padding: 5px;
+    width: 25%;
+    border: 2px solid black;
+    font-size: 14px;
+    color: #222;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px #888888;
+}
+
+#slider-range {
+    width: 300px;
+}
+
+#blank {
+    padding: 5px;
+}
+
+#slider-range-label {
+    color: black;
+    padding: 10px 0px 10px 0px;
+}
+
+.title {
+    font-size: 18px;
+    text-align: center;
+    margin: 0;
+}
+
+.author {
+    font-size: 8px;
+    margin: 0;
+
+}
+
+.buffer-slider {
+    padding: 10px;
+}
+
+#catCode {
+    width: 40%;
+}
+
+/*========Filter tabs========*/
+
+/* Style the tab */
+.container-filter {
+    width: 98%;
+    padding: 8px;
+}
+
+#industry-cat-label {
+    color: black;
+    padding: 10px 0;
+}
+
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px 50px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}

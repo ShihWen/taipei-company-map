@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>天龍百工圖</title>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+        <link href="index.css" type="text/css" rel="stylesheet">
+
+        <!-- two-point-range-slider  -->
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,600'>
+        <link rel='stylesheet' href='https://pennypixels.pennymacusa.com/css/1_4_1/pp.css'>
+        <link rel="stylesheet" href="./src/two-point-range-slider/dist/style.css">
+        <script type='text/javascript' > 
+            let minSliderVal
+            let maxSliderVal
+            let selectedCat = [];
+        </script>
+
+        <!-- tags selector -->
+        <link rel="stylesheet" href="./src/bootstrap-4.5.2-dist/css/bootstrap.min.css" />
+        <script src="./src/bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="./src/popup-multi-select/dist/stylesheets/popup-multiselect.min.css" />
+        <script src="./src/popup-multi-select/dist/javascripts/popup-multiselect.min.js"></script>
+
+        <!-- turf.js -->
+        <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script> 
+
+        <!-- Chart.js -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js'></script> 
+        <script src='https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js'></script>
+        <!-- Git ignore -->
+        <script type='text/javascript' src='config.js'></script>
+    </head>
+    <body>
+
+        <div id='map'></div>
+        <div class="clicked-comp-info">
+            <div><strong>公司名稱:</strong> <span id='company-name'></span></div>
+            <div><strong>成立時間:</strong> <span id='established-date'></span></div>
+            <div><strong>營業內容:</strong> <span id='industry-name'></span></div>
+        </div>
+        <div id="side-bar">
+            <div class="upper-side-bar">
+                <div class="title">天龍百工圖<p class='author'>by 
+                    <a target="_blank" rel="noopener noreferrer" href='https://geopainter.com/'>geopainter.com</a></p>
+                </div>
+                <div class="filter">
+                    <div class="container">
+                        <div id="slider-range-label">成立時間篩選: 西元<span id="slider-range-value1"></span>年 ~ <span id="slider-range-value2"></span>年
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div id="slider-range"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="buffer-slider">
+                        <div id="slider-range-label">分析範圍: <span id="buffer-range-value"></span>公尺</div>
+                        <input type="range" min="10" max="50" value="20" class="slider" id="buffer-slider-input">
+                    </div>
+
+                    <div class="container-filter">
+                        <div id="industry-cat-label">業種篩選: </div>
+                        <div class="tab">
+                            <button class="tablinks" onclick="openCity(event, 'category')">大類</button>
+                            <button class="tablinks" onclick="openCity(event, 'code')">統編搜尋</button>
+                        </div>
+                        <!-- Tab content -->
+                        <div id="category" class="tabcontent">
+                            <div class="container">
+                                <select multiple name="vehicle[autos]" id="example">
+                                    <option value="A. 農林漁牧">A. 農林漁牧</option>
+                                    <option value="B. 礦業及土石採取業">B. 礦業及土石採取業</option>
+                                    <option value="C. 製造業">C. 製造業</option>
+                                    <option value="D. 電力及燃氣供應業">D. 電力及燃氣供應業</option>
+                                    <option value="E. 用水供應及污染整治業">E. 用水供應及污染整治業</option>
+                                    <option value="F. 營建工程業">F. 營建工程業</option>
+                                    <option value="G. 批發及零售業">G. 批發及零售業</option>
+                                    <option value="H. 運輸及倉儲業">H. 運輸及倉儲業</option>
+                                    <option value="I. 住宿及餐飲">I. 住宿及餐飲</option>
+                                    <option value="J. 出版、影音製作、傳播及資通訊服務業">J. 出版、影音製作、傳播及資通訊服務業</option>
+                                    <option value="K. 金融及保險業">K. 金融及保險業</option>
+                                    <option value="L. 不動產業">L. 不動產業</option>
+                                    <option value="M. 專業、科學及技術服務業">M. 專業、科學及技術服務業</option>
+                                    <option value="N. 支援服務業">N. 支援服務業</option>
+                                    <option value="O. 公共行政及國防；強制性社會安全">O. 公共行政及國防；強制性社會安全</option>
+                                    <option value="P. 教育業">P. 教育業</option>
+                                    <option value="Q. 醫療保健及社會工作服務業">Q. 醫療保健及社會工作服務業</option>
+                                    <option value="R. 藝術、娛樂及休閒服務業">R. 藝術、娛樂及休閒服務業</option>
+                                    <option value="S. 其他服務業">S. 其他服務業</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="code" class="tabcontent">
+                            <h3>統編找公司</h3>
+                            <input id="catCode" type="text" placeholder='輸入統一編號' maxlength="8">
+                            <button type="button" id="flyTo" class="btn btn-primary btn-sm">搜尋</button>
+                            <span id="search-result"></span>
+                        </div>
+                        <div class='pieChart'>
+                            <canvas id="myChart" width="310" height="220"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!-- two-point-range-slider  -->
+                <script src="./src/two-point-range-slider/dist/script.js"></script>
+                <script src="./index2.js"></script>
+            </div>
+        </div>
+    </body>
+</html>
