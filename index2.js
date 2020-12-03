@@ -1233,6 +1233,20 @@ map.on('load',function(){
     });
 
 
+    map.on('touchstart', 'buffer', function (e) {
+        // Prevent the default map drag behavior.
+
+        if (map.getZoom() > bufferAnalysisZoom){
+            compWithin = [];
+            e.preventDefault();
+            canvas.style.cursor = 'grab';
+            map.on('touchmove', onMove);
+            map.once('touchend', onUp);
+        }
+
+    });
+
+
     /*Get features for first opening*/
     circleUpdate(center, radius, options);
 
