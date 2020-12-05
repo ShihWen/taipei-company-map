@@ -177,7 +177,6 @@ let circleUpdate = (coordsInput, radiusInput, optionsInput) => {
 }
 
 let onMove = (e) => {
-    stopQueryFtr = 1;
     let coords = e.lngLat;
     coords_array = [coords.lng, coords.lat]
     // Set a UI indicator for dragging.
@@ -186,7 +185,19 @@ let onMove = (e) => {
     // Update the Point feature in `geojson` coordinates
     // and call setData to the source layer `point` on it.
     circleUpdate(coords_array, radius, options);
+}
 
+
+let onUp = (e) => {
+    let coords = e.lngLat;
+    //console.log(stopQueryFtr);
+    // Unbind mouse/touch events
+    map.off('mousemove', onMove);
+    map.off('touchmove', onMove);
+
+    bufferAnalysis(turfFeatures, circle);
+    //stopQueryFtr = 0;
+    //console.log(stopQueryFtr);
 
 }
 
@@ -373,21 +384,9 @@ let bufferAnalysis = (turfFeatures, circle) => {
 
 }
 
-let onUp = (e) => {
-    let coords = e.lngLat;
-    //console.log(stopQueryFtr);
-    // Unbind mouse/touch events
-    map.off('mousemove', onMove);
-    map.off('touchmove', onMove);
-
-    bufferAnalysis(turfFeatures, circle);
-    stopQueryFtr = 0;
-    console.log(stopQueryFtr);
-
-}
-
 // listener for sourcedata event.
 let onSourceData = (e) => {
+    
     if (e.isSourceLoaded) {
         // the update is complete: unsubscribe this listener and
         // move on with whatever we need to do next (in this case,
@@ -395,6 +394,8 @@ let onSourceData = (e) => {
         map.off('sourcedata', onSourceData);
         bufferAnalysis(turfFeatures, circle);
     }
+    
+
 }
 
 
@@ -973,8 +974,9 @@ map.on('load',function(){
     let enterCircle = 0;
     let stopQueryFtr = 0;
     map.on('mouseenter', 'buffer', function () {
+        //console.log('mouseEnter');
         enterCircle = 1;
-        stopQueryFtr = 1;
+        //stopQueryFtr = 1;
         if (map.getZoom() > bufferAnalysisZoom){
             map.setPaintProperty('buffer', 'fill-color', '#3bb2d0');
             canvas.style.cursor = '';
@@ -986,8 +988,9 @@ map.on('load',function(){
     });
 
     map.on('mouseleave', 'buffer', function () {
+        //console.log('mouseLeave');
         enterCircle = 0;
-        stopQueryFtr = 0
+        //stopQueryFtr = 0
         if (map.getZoom() > bufferAnalysisZoom){
             map.setPaintProperty('buffer', 'fill-color', circleFillColorOpen);
             canvas.style.cursor = '';
@@ -997,7 +1000,8 @@ map.on('load',function(){
 
     map.on('mousedown', 'buffer', function (e) {
         // Prevent the default map drag behavior.
-
+        console.log('moouseDown');
+        stopQueryFtr = 1
         if (map.getZoom() > bufferAnalysisZoom){
             compWithin = [];
             e.preventDefault();
@@ -1005,6 +1009,13 @@ map.on('load',function(){
             map.on('mousemove', onMove);
             map.once('mouseup', onUp);
         }
+
+    });
+    
+    map.on('mouseup', 'buffer', function (e) {
+        // Prevent the default map drag behavior.
+        console.log('moouseUp');
+        stopQueryFtr = 0
 
     });
 
@@ -1035,6 +1046,7 @@ map.on('load',function(){
         if (e.isSourceLoaded) {
             //console.log(stopQueryFtr);
             if (stopQueryFtr === 0){
+
                 // Do something when the source has finished loading
                 circlePolygon = [];
                 circlePolygon = map.queryRenderedFeatures({layers: ['buffer']});
@@ -1044,6 +1056,7 @@ map.on('load',function(){
 
                 circlePolygon = map.queryRenderedFeatures({layers: ['buffer']});
                 turfFeatures = featureForTurf(featuresFromMoveend);
+                console.log('source update.')
             }
         }
     });
