@@ -1021,7 +1021,7 @@ map.on('load',function(){
 
     map.on('touchstart', 'buffer', function (e) {
         // Prevent the default map drag behavior.
-
+        stopQueryFtr = 1
         if (map.getZoom() > bufferAnalysisZoom){
             compWithin = [];
             e.preventDefault();
@@ -1030,6 +1030,11 @@ map.on('load',function(){
             map.once('touchend', onUp);
         }
 
+    });
+
+    map.on('touchend', 'buffer', function (e) {
+        // Prevent the default map drag behavior.
+        stopQueryFtr = 0
     });
 
 
