@@ -386,7 +386,7 @@ let bufferAnalysis = (turfFeatures, circle) => {
 
 // listener for sourcedata event.
 let onSourceData = (e) => {
-    
+
     if (e.isSourceLoaded) {
         // the update is complete: unsubscribe this listener and
         // move on with whatever we need to do next (in this case,
@@ -394,7 +394,7 @@ let onSourceData = (e) => {
         map.off('sourcedata', onSourceData);
         bufferAnalysis(turfFeatures, circle);
     }
-    
+
 
 }
 
@@ -1011,7 +1011,7 @@ map.on('load',function(){
         }
 
     });
-    
+
     map.on('mouseup', 'buffer', function (e) {
         // Prevent the default map drag behavior.
         console.log('moouseUp');
@@ -1036,6 +1036,7 @@ map.on('load',function(){
     /*Get features for first opening*/
     circleUpdate(center, radius, options);
 
+
     /*Deafault Year Filter*/
     filterBy(1980, 2020);
 
@@ -1049,7 +1050,9 @@ map.on('load',function(){
 
                 // Do something when the source has finished loading
                 circlePolygon = [];
+
                 circlePolygon = map.queryRenderedFeatures({layers: ['buffer']});
+
 
                 featuresFromMoveend = [];
                 featuresFromMoveend = map.queryRenderedFeatures({layers: givenLayerIdArray});

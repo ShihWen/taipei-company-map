@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>天龍百工圖</title>
+        <title>台北產業地圖</title>
 
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
@@ -32,6 +32,12 @@
         <!-- Chart.js -->
         <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js'></script> 
         <script src='https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js'></script>
+
+        <!-- Intro -->
+        <meta name="description" content="台北市公司產業地圖，將財政部稅籍資料進行地理編碼後(Geocoding)，呈現於地圖上，可透過公司成立年份或營業內容進行篩選。">
+        <meta property="og:title" content="台北產業地圖">
+        <meta property="og:description" content="台北市公司產業地圖，將財政部稅籍資料進行地理編碼後(Geocoding)，呈現於地圖上，可透過公司成立年份或營業內容進行篩選。">
+        <meta property="og:image" content="https://imgur.com/24d0Ygj.png" />
     </head>
     <body>
 
@@ -43,7 +49,7 @@
         </div>
         <div id="side-bar">
             <div class="upper-side-bar">
-                <div class="title">天龍百工圖<p class='author'>by 
+                <div class="title">台北產業地圖<p class='author'>by 
                     <a target="_blank" rel="noopener noreferrer" href='https://geopainter.com/'>geopainter.com</a></p>
                 </div>
                 <div class="filter">
