@@ -30,6 +30,6 @@ Buffer Analysis
 ![](https://github.com/ShihWen/taipei-company-map/blob/main/img/img4_codeSearch.png)
 
 
-* Click compnay straight forward on the map
+* Click company straight forward on the map
 
 ![](https://github.com/ShihWen/taipei-company-map/blob/main/img/img5_clickMap.png)
