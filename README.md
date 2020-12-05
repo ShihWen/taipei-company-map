@@ -9,6 +9,7 @@ Data Source: https://data.gov.tw/dataset/9400
 
 * Slider in orange area: Filtering companies by established time
 * Slider in red area: Changing the radius of the area (green circle) for buffer analysis
+* Green circle: can be moved around by clicking and dragging
 
 ![](https://github.com/ShihWen/taipei-company-map/blob/main/img/img1_filters.png)
 Filters
