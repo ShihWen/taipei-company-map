@@ -433,49 +433,49 @@ let flyLocGenerator = (codeVal) => {
 
 //Layer
 const source_name1 = 'stations1'
-const source_layer1 = 'TPE_v4_pt1';
-const source_url1 = "mapbox://" + "shihwenwutwbeta.66rgxbem"
+const source_layer1 = 'TPE_v5_pt1';
+const source_url1 = "mapbox://" + "shihwenwutwbeta.43vy19h6"
 const givenLayerId1 = 'station-origin-LargeZoom'
 
 const source_name2 = 'stations2'
-const source_layer2 = 'TPE_v4_pt2';
-const source_url2 = "mapbox://" + "shihwenwutwbeta.5b5vq29p"
+const source_layer2 = 'TPE_v5_pt2';
+const source_url2 = "mapbox://" + "shihwenwutwbeta.a3vjloua"
 const givenLayerId2 = 'station-origin-LargeZoom2'
 
 
 const source_name3 = 'stations3'
-const source_layer3 = 'TPE_v4_pt3';
-const source_url3 = "mapbox://" + "shihwenwutwbeta.14v6ramt"
+const source_layer3 = 'TPE_v5_pt3';
+const source_url3 = "mapbox://" + "shihwenwutwbeta.98878rku"
 const givenLayerId3 = 'station-origin-LargeZoom3'
 
 const source_name4 = 'stations4'
-const source_layer4 = 'TPE_v4_pt4';
-const source_url4 = "mapbox://" + "shihwenwutwbeta.d40ssz9g"
+const source_layer4 = 'TPE_v5_pt4';
+const source_url4 = "mapbox://" + "shihwenwutwbeta.7mvhzssk"
 const givenLayerId4 = 'station-origin-LargeZoom4'
 
 const source_name5 = 'stations5'
-const source_layer5 = 'TPE_v4_pt5';
-const source_url5 = "mapbox://" + "shihwenwutwbeta.3m5zox93"
+const source_layer5 = 'TPE_v5_pt5';
+const source_url5 = "mapbox://" + "shihwenwutwbeta.dfbo0hrf"
 const givenLayerId5 = 'station-origin-LargeZoom5'
 
 const source_name6 = 'stations6'
-const source_layer6 = 'TPE_v4_pt6';
-const source_url6 = "mapbox://" + "shihwenwutwbeta.br3jbv34"
+const source_layer6 = 'TPE_v5_pt6';
+const source_url6 = "mapbox://" + "shihwenwutwbeta.5t9m23ne"
 const givenLayerId6 = 'station-origin-LargeZoom6'
 
 const source_name7 = 'stations7'
-const source_layer7 = 'TPE_v4_pt7';
-const source_url7 = "mapbox://" + "shihwenwutwbeta.ddz0ea48"
+const source_layer7 = 'TPE_v5_pt7';
+const source_url7 = "mapbox://" + "shihwenwutwbeta.b5eqr8kr"
 const givenLayerId7 = 'station-origin-LargeZoom7'
 
 const source_name8 = 'stations8'
-const source_layer8 = 'TPE_v4_pt8';
-const source_url8 = "mapbox://" + "shihwenwutwbeta.8zjvn069"
+const source_layer8 = 'TPE_v5_pt8';
+const source_url8 = "mapbox://" + "shihwenwutwbeta.9i1f0dal"
 const givenLayerId8 = 'station-origin-LargeZoom8'
 
 const source_name9 = 'stations9'
-const source_layer9 = 'TPE_v4_pt9';
-const source_url9 = "mapbox://" + "shihwenwutwbeta.7iaev5fh"
+const source_layer9 = 'TPE_v5_pt9';
+const source_url9 = "mapbox://" + "shihwenwutwbeta.akhb5yb7"
 const givenLayerId9 = 'station-origin-LargeZoom9'
 
 const sourceNameArray = [source_name1, source_name2, source_name3, 
