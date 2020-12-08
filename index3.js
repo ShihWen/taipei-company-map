@@ -1000,7 +1000,6 @@ map.on('load',function(){
 
     map.on('mousedown', 'buffer', function (e) {
         // Prevent the default map drag behavior.
-        console.log('moouseDown');
         stopQueryFtr = 1
         if (map.getZoom() > bufferAnalysisZoom){
             compWithin = [];
@@ -1014,7 +1013,6 @@ map.on('load',function(){
 
     map.on('mouseup', 'buffer', function (e) {
         // Prevent the default map drag behavior.
-        console.log('moouseUp');
         stopQueryFtr = 0
 
     });
@@ -1066,7 +1064,6 @@ map.on('load',function(){
 
                 circlePolygon = map.queryRenderedFeatures({layers: ['buffer']});
                 turfFeatures = featureForTurf(featuresFromMoveend);
-                console.log('source update.')
             }
         }
     });
