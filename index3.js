@@ -434,7 +434,7 @@ let flyLocGenerator = (codeVal) => {
 //Layer
 const source_name1 = 'stations1'
 const source_layer1 = 'TPE_v5_pt1';
-const source_url1 = "mapbox://" + "shihwenwutwbeta.43vy19h6"
+const source_url1 = "mapbox://" + "shihwenwutwbeta.43vy19h6" 
 const givenLayerId1 = 'station-origin-LargeZoom'
 
 const source_name2 = 'stations2'
